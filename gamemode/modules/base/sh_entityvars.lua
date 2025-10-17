@@ -3,8 +3,8 @@ DarkRP.RegisteredDarkRPVars = DarkRP.RegisteredDarkRPVars or {}
 DarkRP.RegisteredDarkRPVarsById = DarkRP.RegisteredDarkRPVarsById or {}
 
 -- the amount of bits assigned to the value that determines which DarkRPVar we're sending/receiving
-local DARKRP_ID_BITS = 8
-local UNKNOWN_DARKRPVAR = 255 -- Should be equal to 2^DARKRP_ID_BITS - 1
+local DARKRP_ID_BITS = 32
+local UNKNOWN_DARKRPVAR = (2 ^ DARKRP_ID_BITS) - 1
 DarkRP.DARKRP_ID_BITS = DARKRP_ID_BITS
 
 function DarkRP.registerDarkRPVar(name, writeFn, readFn)
