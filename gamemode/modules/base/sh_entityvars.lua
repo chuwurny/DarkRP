@@ -89,7 +89,7 @@ end
 
 function DarkRP.readNetDarkRPVarRemoval()
     local id = net.ReadUInt(DARKRP_ID_BITS)
-    return id == 255 and net.ReadString() or DarkRP.RegisteredDarkRPVarsById[id].name
+    return id == UNKNOWN_DARKRPVAR and net.ReadString() or DarkRP.RegisteredDarkRPVarsById[id].name
 end
 
 -- The money is a double because it accepts higher values than Int and UInt, which are undefined for >32 bits
