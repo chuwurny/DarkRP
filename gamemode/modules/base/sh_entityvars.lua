@@ -26,7 +26,7 @@ end
 
 -- Unknown values have unknown types and unknown identifiers, so this is sent inefficiently
 local function writeUnknown(name, value)
-    net.WriteUInt(UNKNOWN_DARKRPVAR, 8)
+    net.WriteUInt(UNKNOWN_DARKRPVAR, DARKRP_ID_BITS)
     net.WriteString(name)
     net.WriteType(value)
 end
@@ -64,7 +64,7 @@ function DarkRP.writeNetDarkRPVarRemoval(name)
     if not DarkRPVar then
         warnRegistration(name)
 
-        net.WriteUInt(UNKNOWN_DARKRPVAR, 8)
+        net.WriteUInt(UNKNOWN_DARKRPVAR, DARKRP_ID_BITS)
         net.WriteString(name)
         return
     end
