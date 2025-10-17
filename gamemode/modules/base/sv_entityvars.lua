@@ -107,7 +107,7 @@ function meta:sendDarkRPVars()
             end
 
             local vars_cnt = #vars
-            net.WriteUInt(vars_cnt, DarkRP.DARKRP_ID_BITS + 2) -- Allow for three times as many unknown DarkRPVars than the limit
+            net.WriteUInt(vars_cnt, DarkRP.DARKRP_ID_BITS)
             for i = 1, vars_cnt, 1 do
                 DarkRP.writeNetDarkRPVar(vars[i], DarkRP.ServerDarkRPVars[target][vars[i]])
             end

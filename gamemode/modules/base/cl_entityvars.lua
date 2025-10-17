@@ -77,7 +77,7 @@ local function InitializeDarkRPVars(len)
 
     for i = 1, plyCount, 1 do
         local userID = net.ReadUInt(16)
-        local varCount = net.ReadUInt(DarkRP.DARKRP_ID_BITS + 2)
+        local varCount = net.ReadUInt(DarkRP.DARKRP_ID_BITS)
 
         for j = 1, varCount, 1 do
             local var, value = DarkRP.readNetDarkRPVar()
